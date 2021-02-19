@@ -32,7 +32,7 @@ const app = express_1.default();
 const PORT = process.env.PORT || 4000;
 app.use(bodyParser.json());
 app.use(cors_1.default());
-app.use(routes_1.default);
+app.use('/api', routes_1.default);
 const uri = `mongodb+srv://root:root@cluster0.jhwtg.mongodb.net/luca?retryWrites=true&w=majority`;
 const options = { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false };
 mongoose_1.default.set("useFindAndModify", false);

@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.use(cors())
  
-app.use(questionsRoutes);
+app.use('/api',questionsRoutes);
 
 const uri : string = `mongodb+srv://root:root@cluster0.jhwtg.mongodb.net/luca?retryWrites=true&w=majority`
 
