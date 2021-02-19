@@ -13,8 +13,9 @@ const getQuestions = async (req: Request, res: Response): Promise<void> => {
 
 const addQuestion = async (req: Request, res: Response): Promise<void> => {
   try {
-    const body = req.body as Pick<IQuestion, "author" | "title" | "description" | "noOfComments">
 
+    const body = req.body as Pick<IQuestion, "author" | "title" | "description" | "noOfComments">
+    console.log(body);
     const question: IQuestion = new Question({
       author: body.author,
       title: body.title,
@@ -22,13 +23,18 @@ const addQuestion = async (req: Request, res: Response): Promise<void> => {
       noOfComments: body.noOfComments
     })
 
-    const newQuestion: IQuestion = await question.save()
-    const allQuestions: IQuestion[] = await Question.find()
-
-    res
-      .status(201)
-      .json({ message: "Question added", question: newQuestion, questions: allQuestions })
+    console.log(question);
+    await question.save().then(()=>{
+      res
+      .status(200)
+      .json({ message: "Question added" })
+    })
+    console.log(question);
+    // const allQuestions: IQuestion[] = await Question.find()
   } catch (error) {
+    res
+      .status(400)
+      .json({ message: "Problem" })
     throw error
   }
 }

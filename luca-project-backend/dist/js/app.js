@@ -22,26 +22,51 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require('dotenv').config();
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const cors_1 = __importDefault(require("cors"));
 const bodyParser = __importStar(require("body-parser"));
-const app = express_1.default();
+const QuestionModel = require('./models/question');
 const routes_1 = __importDefault(require("./routes"));
-const PORT = 4000;
+const app = express_1.default();
+const PORT = process.env.PORT || 4000;
 app.use(bodyParser.json());
 app.use(cors_1.default());
 app.use(routes_1.default);
 const uri = `mongodb+srv://root:root@cluster0.jhwtg.mongodb.net/luca?retryWrites=true&w=majority`;
 const options = { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false };
+mongoose_1.default.set("useFindAndModify", false);
 mongoose_1.default
     .connect(uri, options)
-    .then(() => app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`)))
+    .then(() => console.log(`Server running on http://localhost:${PORT}`)
+// app.listen(PORT, () =>
+//   console.log(`Server running on http://localhost:${PORT}`)
+// )
+)
     .catch(error => {
     throw error;
 });
+mongoose_1.default.connection.on('error', (err) => {
+    console.error(`Mongoose connection error: ${err}`);
+    process.exit(1);
+});
+const Question = QuestionModel;
 app.get('/', (req, res) => {
+    Question.save({
+        "author": "Nico",
+        "title": "Test",
+        "description": "Bla bla",
+        "noOfComments": 10
+    });
     res.send('Hello world!');
 });
 app.listen(PORT);
+// const server = http.createServer(app);
+// server.listen(PORT, function () {
+//   console.log("Express server listening on *:" + PORT);
+// });
+// server.on('listening',function(){
+//   console.log('ok, server is running');
+// });
+//  process.on('SIGINT', () => { console.log("Bye bye!"); process.exit(); });
+//  process.once('SIGUSR2', function () { process.kill(process.pid, 'SIGUSR2'); });

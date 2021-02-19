@@ -21,10 +21,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = __importStar(require("mongoose"));
 const questionSchema = new mongoose.Schema({
-    author: {
-        ref: 'User',
-        type: mongoose.Schema.Types.ObjectId,
-    },
+    author: String,
     title: String,
     description: String,
     noOfComments: Number
