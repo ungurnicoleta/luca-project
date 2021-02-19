@@ -2,10 +2,7 @@ import { Document } from "mongoose"
 import mongoose from "mongoose"
 
 interface IQuestion extends Document {
-  author: {
-    ref: 'User',
-    type: mongoose.Schema.Types.ObjectId,
-  },
+  author: string
   title: string
   description: string
   noOfComments: number
