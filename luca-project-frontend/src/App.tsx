@@ -18,6 +18,9 @@ import badgeIcon from './assets/images/BadgeIcon.png'
 import flowerIcon from './assets/images/FlowerIcon.png'
 import notificationIcon from './assets/images/NotificationIcon.png'
 import userIcon from './assets/images/UserIcon.png'
+import lobbyTitleButton from './assets/images/LobbyTitleButton.png'
+import rectangleSelected from './assets/images/RectangleIcon.png'
+
 
 const App: React.FC = () => {
   const [questions, setQuestions] = useState<IQuestion[]>([])
@@ -140,6 +143,22 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </div>
+          </div>
+          <div className="lobby-feed">
+            <div className="lobby-feed-title">
+              <div className="lobby-feed-title-text">Comunidad Luca</div>
+              <div className="lobby-feed-title-btn-wrapper">
+                <img className="lobby-feed-title-btn" src={lobbyTitleButton} />
+              </div>
+            </div>
+            <div className="lobby-feed-options">
+              <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <div className="lobby-feed-option" style={{color: "#3843D0", marginBottom: 7 }}>POPULARES</div>
+                <img style={{width: 113, height: 2}} src={rectangleSelected} />
+              </div>
+              <div className="lobby-feed-option" style={{color: "#9A9CB5"}}>NUEVOS</div>
+              <div className="lobby-feed-option" style={{color: "#9A9CB5"}}>SEGUIDOS</div>
+            </div>
           </div>
         </div>
     </div>
