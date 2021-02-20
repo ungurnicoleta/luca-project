@@ -4,7 +4,7 @@ type Props = {
   saveQuestion: (e: React.FormEvent, formData: IQuestion | any) => void 
 }
 
-const AddTodo: React.FC<Props> = ({ saveQuestion }) => {
+const AddQuestion: React.FC<Props> = ({ saveQuestion }) => {
   const [formData, setFormData] = useState<IQuestion | {}>()
 
   const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
@@ -18,12 +18,16 @@ const AddTodo: React.FC<Props> = ({ saveQuestion }) => {
     <form className='Form' onSubmit={(e) => saveQuestion(e, formData)}>
       <div>
         <div>
-          <label htmlFor='name'>Name</label>
+          <label htmlFor='title'>Title</label>
           <input onChange={handleForm} type='text' id='title' />
         </div>
         <div>
           <label htmlFor='description'>Description</label>
           <input onChange={handleForm} type='text' id='description' />
+        </div>
+        <div>
+          <label htmlFor='author'>Author</label>
+          <input onChange={handleForm} type='text' id='author' />
         </div>
         <div>
           <label htmlFor='author'>Author</label>
@@ -35,4 +39,4 @@ const AddTodo: React.FC<Props> = ({ saveQuestion }) => {
   )
 }
 
-export default AddTodo
+export default AddQuestion
