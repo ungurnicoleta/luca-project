@@ -18,13 +18,9 @@ import badgeIcon from './assets/images/BadgeIcon.png'
 import flowerIcon from './assets/images/FlowerIcon.png'
 import notificationIcon from './assets/images/NotificationIcon.png'
 import userIcon from './assets/images/UserIcon.png'
-import lobbyTitleButton from './assets/images/LobbyTitleButton.png'
-import rectangleSelected from './assets/images/RectangleIcon.png'
-import likeIcon from './assets/images/LikeIcon.png'
-import unlikeIcon from './assets/images/UnlikeIcon.png'
-import commIcon from './assets/images/CommentIcon.png'
-import shareIcon from './assets/images/ShareIcon.png'
-import fullStarIcon from './assets/images/FullStarIcon.png'
+import ListComponent from "./components/ListComponent";
+import LeftSideMenu from "./components/LeftSideMenu";
+import RightSideMenuList from "./components/RightSideMenuList";
 
 
 const App: React.FC = () => {
@@ -62,7 +58,7 @@ const App: React.FC = () => {
       })
       .catch(err => console.log(err))
   }
-  
+
   const handleDeleteQuestion = (_id: string): void => {
     deleteQuestion(_id)
       .then(({ status, data }) => {
@@ -75,10 +71,10 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="main-container">
-      {/* <h1>My Todos</h1> */}
-      {/* <AddQuestion saveQuestion={handleSaveQuestion} /> */}
-      {/* {questions.map((question: IQuestion) => (
+      <div className="main-container">
+        {/* <h1>My Todos</h1> */}
+        {/* <AddQuestion saveQuestion={handleSaveQuestion} /> */}
+        {/* {questions.map((question: IQuestion) => (
         <TodoItem
           key={todo._id}
           updateTodo={handleUpdateTodo}
@@ -87,127 +83,9 @@ const App: React.FC = () => {
         />
       ))} */}
 
-      <div className="left-side-wrapper">
-        <div className="side-navbar-logo">
-            <img className="side-logo" src={logo} />
-        </div>
-        <div className="side-navbar-menu">
-          <div className="menu-icon-wrapper">
-            <img className="menu-icon" src={homeIcon} />
-            <div className="menu-text menu-text-font">Inicio</div>
-          </div>
-          <div className="menu-icon-wrapper">
-            <img className="menu-icon" src={YTIcon} />
-            <div className="menu-text menu-text-font">Mis cursos</div>
-          </div>
-          <div className="menu-icon-wrapper">
-            <img className="menu-icon" src={quizIcon} />
-            <div className="menu-text menu-text-font">Quizzes</div>
-          </div>
-          <div className="menu-icon-wrapper">
-            <img className="menu-icon" src={studyPlanIcon} />
-            <div className="menu-text menu-text-font">Mi plan de estudios</div>
-          </div>
-          <div className="menu-icon-wrapper menu-selected">
-            <img className="menu-icon" src={communityIcon} />
-            <div className="menu-text-selected menu-text-font-selected">Comunidad</div>
-          </div>
-          <div className="menu-icon-wrapper">
-            <img className="menu-icon" src={helpIcon} />
-            <div className="menu-text menu-text-font">Centro de ayuda</div>
-          </div>
-        </div>
+        <LeftSideMenu/>
+        <RightSideMenuList/>
       </div>
-      <div className="lobby-container">
-        <div className="lobby-navbar">
-              <div className="navbar-buttons-group1">
-                <img className="lobby-navbar-button" src={explorarButton} />
-                <img className="lobby-navbar-icon" src={searchIcon} />
-              </div>
-              <div className="navbar-buttons-group2">
-                <div className="lobby-group2-row-center">
-                  <img className="lobby-navbar-icon-group2" src={fireIcon} />
-                  <div className="lobby-navbar-number-group2">0</div>
-                </div>
-                <div className="lobby-group2-row-center">
-                  <img className="lobby-navbar-icon-group2" src={badgeIcon} />
-                  <div className="lobby-navbar-number-group2">0</div>
-                </div>
-                <div className="lobby-group2-row-center">
-                  <img className="lobby-navbar-icon-group2" src={flowerIcon} />
-                  <div className="lobby-navbar-number-group2">0</div>
-                </div>
-              </div>
-              <div className="navbar-buttons-group3">
-                <div className="lobby-group2-row-center">
-                  <img className="lobby-navbar-icon-group2" src={notificationIcon} />
-                </div>
-                <div className="lobby-group2-row-center">
-                  <div className="lobby-navbar-icon-group3">
-                    <img className="lobby-navbar-icon-user" src={userIcon} />
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div className="lobby-feed">
-            <div className="lobby-feed-title">
-              <div className="lobby-feed-title-text">Comunidad Luca</div>
-              <div className="lobby-feed-title-btn-wrapper">
-                <img className="lobby-feed-title-btn" src={lobbyTitleButton} />
-              </div>
-            </div>
-            <div className="lobby-feed-options">
-              <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                <div className="lobby-feed-option" style={{color: "#3843D0", marginBottom: 7 }}>POPULARES</div>
-                <img style={{width: 113, height: 2}} src={rectangleSelected} />
-              </div>
-              <div className="lobby-feed-option" style={{color: "#9A9CB5"}}>NUEVOS</div>
-              <div className="lobby-feed-option" style={{color: "#9A9CB5"}}>SEGUIDOS</div>
-            </div>
-
-            <div className="lobby-feed-questions-list">
-              <div className="lobby-feed-question">
-                  <div className="user-profile-picture">
-                    <div className="user-profile-icon-wrapper">
-                      <img className="user-profile-icon" src={userIcon} />
-                    </div>
-                  </div>
-                  <div className="question-content">
-                    <div style={{display: 'flex', flexDirection: 'row'}}>
-                      <div style={{display: 'flex', flexDirection: 'column', flexGrow: 5}}>
-                        <div className="question-content-title">¿Cuáles son los múltiplos del 7?</div>
-                        <div className="question-content-desc">La verdad no me queda muy claro cuáles son los múltiplos del 7 porque...</div>
-                    </div>
-                      <div className="comments-share-save">
-                        <img src={commIcon} className="comm-icon"/>
-                        <div className="comm-number">0</div>
-                      </div>
-                  </div>
-                  <div style={{display: 'flex', flexDirection: 'row'}}>                
-                      <div className="question-content-likes" style={{flexGrow: 5}}>
-                        <div className="question-likes">
-                          <img className="like-icon" style={{marginRight: 15}} src={likeIcon} />
-                          <img className="like-icon" src={unlikeIcon} />
-                        </div>
-                        <div className="question-likes-text">
-                          Pregunta juan.c23 en <strong style={{fontWeight: 600, color:"#3843D0"}}>Matemáticas 6º</strong>
-                        </div>
-                      </div>
-                      <div style={{display: 'flex', flexDirection: 'row'}}>
-                        <img src={shareIcon} style={{marginRight: 25}} className="share-save-icon"/>
-                        <img src={fullStarIcon} className="share-save-icon"/>
-                      </div>
-                     
-                  </div>   
-              </div>
-        
-                  
-              </div>
-              <hr/>
-            </div>
-          </div>
-        </div>
-    </div>
-  )
+  );
 }
 export default App;
