@@ -1,6 +1,5 @@
 import React from 'react'
 import "./App.css";
-import RightSideMenuAdd from "./components/RightSideMenuAdd";
 import HomeScreen from './components/HomeScreen';
 import {
   BrowserRouter as Router,
