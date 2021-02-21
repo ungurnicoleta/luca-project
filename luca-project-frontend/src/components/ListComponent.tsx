@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import userIcon from '../assets/images/UserIcon.png'
+import React from 'react'
 import lobbyTitleButton from '../assets/images/LobbyTitleButton.png'
 import rectangleSelected from '../assets/images/RectangleIcon.png'
-import likeIcon from '../assets/images/LikeIcon.png'
-import unlikeIcon from '../assets/images/UnlikeIcon.png'
-import commIcon from '../assets/images/CommentIcon.png'
-import shareIcon from '../assets/images/ShareIcon.png'
-import fullStarIcon from '../assets/images/FullStarIcon.png'
 import QuestionComponent from "./QuestionComponent";
-
+import {
+    BrowserRouter as Router,
+    Link,
+    Redirect,
+  } from "react-router-dom";
+  
 
 const ListComponent = () => {
   return (
@@ -16,7 +15,10 @@ const ListComponent = () => {
         <div className="lobby-feed-title">
           <div className="lobby-feed-title-text">Comunidad Luca</div>
           <div className="lobby-feed-title-btn-wrapper">
-            <img className="lobby-feed-title-btn" src={lobbyTitleButton} />
+          <Link to="/add">
+            <img className="lobby-feed-title-btn" src={lobbyTitleButton}/>
+          </Link>
+            
           </div>
         </div>
         <div className="lobby-feed-options">

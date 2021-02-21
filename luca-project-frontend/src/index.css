@@ -267,6 +267,11 @@ body {
   height: 36px; 
 }
 
+.cancel-btn {
+  width: 125px;
+  height: 36px;
+}
+
 .lobby-feed-options {
   display: flex;
   flex-direction: row;
