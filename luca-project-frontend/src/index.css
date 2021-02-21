@@ -267,6 +267,14 @@ body {
   height: 36px; 
 }
 
+.cancel-btn-wrapper {
+  flex-grow: 1;
+  align-items: flex-end;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+
 .cancel-btn {
   width: 125px;
   height: 36px;
@@ -431,4 +439,63 @@ body {
   height: 45.83px;
 
   cursor: pointer;
+}
+
+.label-form-title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #565656;
+  margin-bottom: 10px;
+}
+
+.input-form-title {
+  width: 576px;
+  height: 48px;
+
+  background: #FFFFFF;
+  border: 2px solid rgba(38, 38, 38, 0.25);
+  box-sizing: border-box;
+  border-radius: 12px;
+
+  padding-left: 20px;
+}
+
+.input-form-description {
+  width: 576px;
+  height: 192px;
+
+  background: #FFFFFF;
+  border: 2px solid rgba(38, 38, 38, 0.25);
+  box-sizing: border-box;
+  border-radius: 12px;
+
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+.input-form-title::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+
+  color: #C0C0C0;
+}
+
+
+.input-form-description::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+
+  padding-top: 10px;
+
+  color: #C0C0C0;
 }
