@@ -168,8 +168,8 @@ body {
 }
 
 .lobby-navbar-icon-group3{
-  width: 21px;
-  height: 28px;
+  width: 24px;
+  height: 26px;
   padding: 3px;
   padding-top: 2px;
   background-color: #3843D0;
@@ -183,8 +183,8 @@ body {
   position: relative;
 
   bottom: -20%;
-  width: 21px;
-  height: 28px;
+  width: 24px;
+  height: 26px;
 
   cursor: pointer;
 }
@@ -292,4 +292,137 @@ body {
 
   text-align: center;
   letter-spacing: 0.02em;
+
+  position: relative;
+}
+
+.lobby-feed-questions-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  position: relative;
+  top: 50px;
+  /* background: #DBDBDB; */
+}
+
+.lobby-feed-question {
+  display: flex;
+  flex-direction: row;
+  padding: 2%;
+  padding-top: 3%;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+.user-profile-picture {
+  margin-right: 5%;
+}
+
+.question-content {
+  width: 95%;
+}
+
+
+.question-content-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: #4F4F4F;
+
+  padding-bottom: 10px;
+}
+
+.question-content-desc {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 24px;
+  color: #828282;
+  opacity: 0.7;
+
+  padding-bottom: 10px;
+}
+
+.question-content-likes {
+  display: flex;
+  flex-direction: row;
+}
+
+.question-likes {
+  display: flex;
+  flex-direction: row;
+}
+
+.question-likes-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 24px;
+
+  color: #828282;
+  
+  margin-left: 30px;
+}
+
+.like-icon {
+  position: relative;
+  width: 19.68px;
+  height: 20px;
+}
+
+.comments-share-save {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-self: center;
+}
+
+.comm-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.share-save-icon {
+  width: 19px;
+  height: 20px;
+}
+
+.comm-number {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #9A9CB5;
+  margin-left: 5px;
+  position: relative;
+  bottom: 2px;
+}
+
+.user-profile-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  padding: 3px;
+  background-color: #3843D0;
+  border-radius: 100%;
+  text-align: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+
+.user-profile-icon {
+  position: relative;
+
+  bottom: -27%;
+  width: 42.77px;
+  height: 45.83px;
+
+  cursor: pointer;
 }
