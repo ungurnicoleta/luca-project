@@ -38,3 +38,6 @@ $ yarn start
   <br/>    
   <img src="https://github.com/ungurnicoleta/luca-code-challenge/blob/master/luca-project-frontend/src/assets/images/SS1.png" width="750" height="500"/>
 </p>
+
+
+PS: I didn't have the time to finish this project over the weekend, but in case you will consider my application I can bring it to a more stable version.
