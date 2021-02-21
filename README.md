@@ -34,6 +34,7 @@ $ yarn start
 
 ## `SCREENSHOTS`
 <p>
-  <img src="https://github.com/ungurnicoleta/luca-code-challenge/blob/master/luca-project-frontend/src/assets/images/SS1.png" width="250" height="500"/>
-  <img src="https://github.com/ungurnicoleta/luca-code-challenge/blob/master/luca-project-frontend/src/assets/images/SS2.png" width="250" height="500"/>
+  <img src="https://github.com/ungurnicoleta/luca-code-challenge/blob/master/luca-project-frontend/src/assets/images/SS1.png" width="750" height="500"/>
+  <br/>    
+  <img src="https://github.com/ungurnicoleta/luca-code-challenge/blob/master/luca-project-frontend/src/assets/images/SS2.png" width="750" height="500"/>
 </p>
