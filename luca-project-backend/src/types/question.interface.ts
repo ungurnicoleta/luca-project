@@ -1,5 +1,4 @@
 import { Document } from "mongoose"
-import mongoose from "mongoose"
 
 interface IQuestion extends Document {
   author: string

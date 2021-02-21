@@ -1,8 +1,8 @@
 {
     "env": {
-        "MONGO_USER": "your-username",
-        "MONGO_PASSWORD": "your-password",
-        "MONGO_DB": "your-db-name",
-        "PORT": "3000"
+        "MONGO_USER": "root",
+        "MONGO_PASSWORD": "root",
+        "MONGO_DB": "luca",
+        "PORT": "4000"
     }
 }

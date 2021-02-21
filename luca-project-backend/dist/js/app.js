@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 4000;
 app.use(bodyParser.json());
 app.use(cors_1.default());
 app.use('/api', routes_1.default);
-const uri = `mongodb+srv://root:root@cluster0.jhwtg.mongodb.net/luca?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.jhwtg.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 const options = { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false };
 mongoose_1.default.set("useFindAndModify", false);
 mongoose_1.default
@@ -52,12 +52,6 @@ mongoose_1.default.connection.on('error', (err) => {
 });
 const Question = QuestionModel;
 app.get('/', (req, res) => {
-    Question.save({
-        "author": "Nico",
-        "title": "Test",
-        "description": "Bla bla",
-        "noOfComments": 10
-    });
     res.send('Hello world!');
 });
 app.listen(PORT);

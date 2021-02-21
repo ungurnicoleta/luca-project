@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 
 app.use(cors())
  
-app.use('/api',questionsRoutes);
+app.use('/api', questionsRoutes);
 
-const uri : string = `mongodb+srv://root:root@cluster0.jhwtg.mongodb.net/luca?retryWrites=true&w=majority`
+const uri : string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.jhwtg.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 mongoose.set("useFindAndModify", false)
@@ -41,12 +41,6 @@ mongoose
  
    
 app.get('/', (req, res) => {
-    Question.save({
-      "author": "Nico",
-      "title": "Test",
-      "description": "Bla bla",
-      "noOfComments": 10
-  })
     res.send('Hello world!');
   });
 
